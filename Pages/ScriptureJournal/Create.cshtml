@@ -1,0 +1,54 @@
+@page
+@model MyScriptureJournal.Pages_ScriptureJournal.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Journal</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Journal.Book" class="control-label"></label>
+                <input asp-for="Journal.Book" class="form-control" />
+                <span asp-validation-for="Journal.Book" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Journal.Chapter" class="control-label"></label>
+                <input asp-for="Journal.Chapter" class="form-control" />
+                <span asp-validation-for="Journal.Chapter" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Journal.Verse" class="control-label"></label>
+                <input asp-for="Journal.Verse" class="form-control" />
+                <span asp-validation-for="Journal.Verse" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Journal.Notes" class="control-label"></label>
+                <input asp-for="Journal.Notes" class="form-control" />
+                <span asp-validation-for="Journal.Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Journal.DateAdded" class="control-label"></label>
+                <input asp-for="Journal.DateAdded" class="form-control" />
+                <span asp-validation-for="Journal.DateAdded" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
